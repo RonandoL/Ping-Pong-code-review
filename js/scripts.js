@@ -61,20 +61,31 @@ var negativeNumbers = function(number){
 $(document).ready(function() {
   $("form.pingPong").submit(function(event) {
     var userInput = parseInt($("input.userInput").val());
+    var ul = $(".countResults");  // variable pointing to <ul> output
+
+    // Variables pointing to Business Logic functions
+    var errorCheck = errorHandling(userInput);  //  errorHandling function
+    var pingPong = pingPong(userInput);  // pingPong function
+    var negativeCheck = negativeNumbers(userInput)  // negativeNumbers function
+
+    if (errorCheck === "error message") {
+      console.log(errorCheck);
+      $(".errorMessage").append("Please input only a number");
+    } else {
+
+    }
+
+// ("<li>" + "Please input only a number" + "</li>")
 
 
 
 
 
-
-
-    // Show me some money, hunny, and reveal that hiddin fine shit you got stashed.
-
-    // It's all good baby.'
     event.preventDefault();
-  });
 
-});
+  });  // .submit
+
+});  // .ready
 
 
 
