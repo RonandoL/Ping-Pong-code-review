@@ -51,11 +51,12 @@ var pingPong = function(number){
 };
 
 
-// User Interface Logic ===========================================================
+// User Interface Logic ===============
 
 
 $(document).ready(function() {
   $("form.pingPong").submit(function(event) {
+    $(".countResults").empty();
     var result = pingPong(parseInt($("input.userInput").val()));
     $(".countResults").append("<li>" + result + "</li>");
     event.preventDefault();
