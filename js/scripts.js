@@ -11,14 +11,18 @@ var errorHandling = function(number){
 };
 
 // Main PingPong:
-// var errorHandling = function(number){
-//   var output = [];
-//
-//   if (isNaN(number) || (number === "")) {
-//     output.push("error message");
-//   }
-//   return output;
-// };
+var pingPong = function(number){
+  var output = [];
+
+  for (var i = 0; i <= number; i++) {
+    if (i % 3 === 0) {
+      output.push("ping")
+    } else {
+      output.push(i);
+    }
+  }
+  return output;
+};
 
 
 

@@ -10,13 +10,13 @@ describe('errorHandling', function(){
 
 
 describe('pingPong', function(){
-  it("will handle text and empty space input errors with an error message", function(){
-    expect(pingPong("error")).to.equal("error message");
+  it("will count up to a number and replace multiples of 3 with 'ping'.", function(){
+    expect(pingPong(4)).to.eql(["ping", 1, 2, "ping", 4]);
   });
 });
 
 // describe('negativeNumbers', function(){
 //   it("will handle text and empty space input errors with an error message", function(){
-//     expect(negativeNumbers("error")).to.equal("error message");
+//     expect(negativeNumbers("error")).to.eql(["error message"]);
 //   });
 // });
