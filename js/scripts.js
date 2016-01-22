@@ -20,7 +20,7 @@ var pingPong = function(number){
 
   for (var i = 1; i <= number; i++) {
     if ((i % number1 === 0) && (i % number2 === 0)) {
-      output.push("pingpong");
+      output.push(ping + pong);
     } else if (i % number1 === 0) {
       output.push(ping);
     } else if (i % number2 === 0) {
@@ -32,12 +32,30 @@ var pingPong = function(number){
   return output;
 };
 
-// Negative Numbers
-// var negativeNumbers = function(number){
-//   var output = [];
-//
-//
-// };
+//Negative Numbers
+var negativeNumbers = function(number){
+  var ping = "ping";
+  var pong = "pong";
+  var number1 = "3";
+  var number2 = "5";
+  var output = [];
+
+  if (number < 0) {
+    for (var i = 0; i >= number; i--) {
+      if ((i % number1 === 0) && (i % number2 === 0)) {
+        output.push(ping + pong);
+      } else if (i % number1 === 0) {
+        output.push(ping);
+      } else if (i % number2 === 0) {
+        output.push(pong);
+      } else {
+        output.push(i);
+      }
+    }
+    return output;
+  }
+};
+
 
 
 
@@ -47,6 +65,7 @@ var pingPong = function(number){
 
 
 // User Interface Logic
+
 // $(document).ready(function() {
 //   $("form#IDselector").submit(function(event) {
 //     // variables and shit go here, bitch!
