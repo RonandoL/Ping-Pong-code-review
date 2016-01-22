@@ -57,28 +57,25 @@ var negativeNumbers = function(number){
 };
 
 
-
-
-
-
-
-
-
 // User Interface Logic
+$(document).ready(function() {
+  $("form.pingPong").submit(function(event) {
+    var userInput = parseInt($("input.userInput").val());
 
-// $(document).ready(function() {
-//   $("form#IDselector").submit(function(event) {
-//     // variables and shit go here, bitch!
+
+
+
+
+
+
+    // Show me some money, hunny, and reveal that hiddin fine shit you got stashed.
+
+    // It's all good baby.'
+    event.preventDefault();
+  });
+
+});
+
+
+
 //
-//     // link your muthafuckin' variables to yo bad-ass bidness logic function, Yo!
-//
-//     // Make shit happen here...BITCH!
-//
-//     // Muthafuckin' variables connect to your output down here hommie.
-//
-//     // Show me some money, hunny, and reveal that hiddin fine shit you got stashed.
-//
-//     // It's all good baby.'
-//     event.preventDefault();
-//   });
-// });
