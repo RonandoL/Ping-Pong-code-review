@@ -1,14 +1,23 @@
 // Business Logic
-// var helloWorld = function(){
-//   return false;
+
+// Error Handling: (text and empty input)
+var errorHandling = function(number){
+  var output = [];
+
+  if (isNaN(number) || (number === "")) {
+    output.push("error message");
+  }
+  return output;
+};
+
+// Main PingPong:
+// var errorHandling = function(number){
+//   var output = [];
 //
-//   For loops and shit go here
-//   If/else like a madman here
-//
-//  return shit like a mo-fo here
-//
-//   ...whatchyu lookin at bitch? Green those specs and git back to work!
-//  Time fo yo Interface Logic, then suckface when it's all green.
+//   if (isNaN(number) || (number === "")) {
+//     output.push("error message");
+//   }
+//   return output;
 // };
 
 
