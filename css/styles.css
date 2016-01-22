@@ -8,8 +8,20 @@
 
 .grey {
   background-color: #E6E6E6;
+  margin-top: 25px;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .green {
   background-color: #90BB90;
+  margin-top: 25px;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+li {
+  list-style: none;
 }
