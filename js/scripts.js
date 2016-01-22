@@ -14,9 +14,13 @@ var errorHandling = function(number){
 var pingPong = function(number){
   var output = [];
 
-  for (var i = 0; i <= number; i++) {
-    if (i % 3 === 0) {
-      output.push("ping")
+  for (var i = 1; i <= number; i++) {
+    if ((i % 3 === 0) && (i % 5 === 0)) {
+      output.push("pingpong");
+    } else if (i % 3 === 0) {
+      output.push("ping");
+    } else if (i % 5 === 0) {
+      output.push("pong");
     } else {
       output.push(i);
     }
