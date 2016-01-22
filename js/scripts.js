@@ -12,21 +12,32 @@ var errorHandling = function(number){
 
 // Main PingPong:
 var pingPong = function(number){
+  var ping = "ping";   // variables used instead of hardcoding values into code
+  var pong = "pong";   // makes for happier coder who has to change a lot later on
+  var number1 = "3";
+  var number2 = "5";
   var output = [];
 
   for (var i = 1; i <= number; i++) {
-    if ((i % 3 === 0) && (i % 5 === 0)) {
+    if ((i % number1 === 0) && (i % number2 === 0)) {
       output.push("pingpong");
-    } else if (i % 3 === 0) {
-      output.push("ping");
-    } else if (i % 5 === 0) {
-      output.push("pong");
+    } else if (i % number1 === 0) {
+      output.push(ping);
+    } else if (i % number2 === 0) {
+      output.push(pong);
     } else {
       output.push(i);
     }
   }
   return output;
 };
+
+// Negative Numbers
+// var negativeNumbers = function(number){
+//   var output = [];
+//
+//
+// };
 
 
 
