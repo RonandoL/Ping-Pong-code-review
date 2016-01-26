@@ -1,16 +1,10 @@
 
-describe('errorHandling', function(){
-  it("will handle text input errors with an error message", function(){
-    expect(errorHandling("f")).to.eql(["error message"]);
-  });
-
-  it("will handle empty space input errors with an error message", function(){
-    expect(errorHandling("")).to.eql(["error message"]);
-  });
-});
-
 
 describe('pingPong', function(){
+  it("will return an empty array if the user enters something that isnt a number", function(){
+    expect(pingPong("foo")).to.eql([]);
+  });
+
   it("will count up to number inputted by the user and output the count from 1 to that number, replacing multiples of 3 with 'ping'.", function(){
     expect(pingPong(4)).to.eql([1, 2, "ping", 4]);
   });

@@ -24,8 +24,6 @@ var negativeNumbers = function(number){
   }
 };
 
-// -------------
-
 // Main PingPong:
 var pingPong = function(number){
   var ping = "ping";   // variables used instead of hardcoding values into code
@@ -35,19 +33,21 @@ var pingPong = function(number){
   var output = [];    // numbers pushed to array that is spit out to browser
 
   for (var i = 1; i <= number; i++) {
-    if (isNaN(number) || (number === "")) {
-      output.push("error message");     // error message not working;
-    } else if ((i % number1 === 0) && (i % number2 === 0)) {
-      output.push("<li>" + ping + pong + "</li>");
+    // if (isNaN(number) || (number === "")) {
+    //   return ("error message");     // error message not working;
+    // } else // when number was not an integer, the for loop didn't run
+    if ((i % number1 === 0) && (i % number2 === 0)) {
+      output.push(ping + pong);
     } else if (i % number1 === 0) {
-      output.push("<li>" + ping + "</li>");
+      output.push(ping);
     } else if (i % number2 === 0) {
-      output.push("<li>" + pong + "</li>");
+      output.push(pong);
     } else {
-      output.push("<li>" + i + "</li>");
+      output.push(i);
     }
   }
-  return output.join(' ');
+  return output;
+
 };
 
 
@@ -57,8 +57,16 @@ var pingPong = function(number){
 $(document).ready(function() {
   $("form.pingPong").submit(function(event) {
     $(".countResults").empty();
-    var result = pingPong(parseInt($("input.userInput").val()));
-    $(".countResults").append("<li>" + result + "</li>");
+    // var input = parseInt($("input.userInput").val();
+    // if isNaN(input) {
+    //   $('countResults').append('Please input a number')
+    // }
+    var result = pingPong(parseInt($("input.userInput").val())); // spits out Array
+
+    for (var i = 0; i < result.length; i++) {
+      $(".countResults").append("<li>" + result[i] + "</li>");
+    }
+
     event.preventDefault();
 
   });  // .submit
