@@ -1,15 +1,20 @@
 // Business Logic
 
-//Negative Numbers
-var negativeNumbers = function(number){
-  var ping = "ping";
-  var pong = "pong";
+// Main PingPong:
+var pingPong = function(number){
+  var ping = "ping";   // variables used instead of hardcoding values into code
+  var pong = "pong";   // makes for happier coder who has to change a lot later on
   var number1 = "3";
   var number2 = "5";
-  var output = [];
+  var output = [];    // numbers pushed to array that is spit out to browser
 
+  if (isNaN(number) || (number === "")) {
+    return (false);     // error message not working;
+  }
+
+    // user enters negative number
   if (number < 0) {
-    for (var i = 0; i >= number; i--) {
+    for (var i = -1; i >= number; i--) {
       if ((i % number1 === 0) && (i % number2 === 0)) {
         output.push(ping + pong);
       } else if (i % number1 === 0) {
@@ -22,20 +27,9 @@ var negativeNumbers = function(number){
     }
     return output;
   }
-};
 
-// Main PingPong:
-var pingPong = function(number){
-  var ping = "ping";   // variables used instead of hardcoding values into code
-  var pong = "pong";   // makes for happier coder who has to change a lot later on
-  var number1 = "3";
-  var number2 = "5";
-  var output = [];    // numbers pushed to array that is spit out to browser
-
+    // user enters positive number
   for (var i = 1; i <= number; i++) {
-    // if (isNaN(number) || (number === "")) {
-    //   return ("error message");     // error message not working;
-    // } else // when number was not an integer, the for loop didn't run
     if ((i % number1 === 0) && (i % number2 === 0)) {
       output.push(ping + pong);
     } else if (i % number1 === 0) {
@@ -51,23 +45,31 @@ var pingPong = function(number){
 };
 
 
-// User Interface Logic ===============
+// User Interface Logic 
+$(function() {
+  $('form').submit(function(event) {
+    event.preventDefault();
 
+    $('.countResults').empty(); // clears out results
+    $('.resultHeader').empty();  // empty number display header
+    $('.red').empty();  // clears error message
 
-$(document).ready(function() {
-  $("form.pingPong").submit(function(event) {
-    $(".countResults").empty();
-    // var input = parseInt($("input.userInput").val();
-    // if isNaN(input) {
-    //   $('countResults').append('Please input a number')
-    // }
-    var result = pingPong(parseInt($("input.userInput").val())); // spits out Array
+    var input = parseInt($('.userInput').val());
+    var result = pingPong(parseInt($('.userInput').val())); // spits out Array
 
-    for (var i = 0; i < result.length; i++) {
-      $(".countResults").append("<li>" + result[i] + "</li>");
+    if (result === false) {  // Error Handling
+      $('.userInput').after('<p class="red">&nbsp;* Please input a number</p>');
+    } else {
+      for (var i = 0; i < result.length; i++) {
+        $('.countResults').append('<li>' + result[i] + '</li>');
+      }
+
+      $('.userNumber').after('<h4 class="resultHeader">Your number is: ' + result.length + '</h4>')
     }
 
-    event.preventDefault();
+
+
+
 
   });  // .submit
 

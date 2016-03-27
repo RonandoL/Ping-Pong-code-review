@@ -2,8 +2,14 @@
   display: none;
 }*/
 
+
 .jumbotron {
   background-color: #F4DEB5;
+}
+
+.red {
+  color: red;
+  display: inline-block;
 }
 
 .grey {
